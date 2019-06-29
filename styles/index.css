@@ -1,0 +1,142 @@
+body {
+    background: black;
+}
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+.resumen {
+    color: white;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 40vw;
+    font-size: 1.1rem;
+}
+video {
+    width: 100%;
+    z-index: 1;
+} 
+header input[type="button"] {
+    background-color: var(--button-video);
+    color: white;
+    border: 0;
+    padding: 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+section {
+    margin-bottom: 50px;
+}
+.item {
+    width: 1fr;
+    height: calc(20vw / 1.46666667);
+    transition: all .2s ease-in;
+    position: relative;
+}
+.pie {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    background:rgba(0, 0, 0, 0.8);;
+    display: none;
+    z-index:10;
+}
+.pie input[type="button"] {
+    background-color: var(--button-video);
+    color: white;
+    border: 0;
+    padding: 10px;
+    font-size: .8rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
+.item:hover {
+    width: 1.5fr;
+    height: calc(30vw / 1.46666667);
+    object-fit: contain;
+}
+.item:hover .pie {
+    display: inherit;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    width: 100%;
+}
+@media all and (max-width: 480px){
+   .resumen {
+       top: 5.5vh;
+       left: 10%;
+       right: 10%;
+       width: 90%;
+       font-size: .5rem;
+   }
+   .resumen h4 {
+       display: none;
+   }
+   header input[type="button"] {
+    background-color: var(--button-video);
+    color: white;
+    border: 0;
+    padding: 5px;
+    font-size: .8rem;
+    border-radius: 5px;
+    }
+    .item {
+        width: 2fr;
+        height: calc(50vw / 1.46666667);
+        position: relative;
+    }
+    .item:hover {
+        width: 2fr;
+        height: calc(50vw / 1.46666667);
+        object-fit: contain;
+    }
+    .item:hover .pie {
+        display: none;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+        width: 100%;
+    }
+    footer {
+        display: none;
+    }
+}
+@media all and (max-width: 900px){
+    .resumen {
+        top: 7vh;
+        left: 10%;
+        right: 10%;
+        width: 90%;
+        font-size: .8rem;
+    }
+    header input[type="button"] {
+        background-color: var(--button-video);
+        color: white;
+        border: 0;
+        padding: 10px;
+        font-size: .8rem;
+        border-radius: 5px;
+        }
+}

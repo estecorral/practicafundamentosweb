@@ -1,0 +1,131 @@
+body{
+    background-color: black;
+    color: white;
+}
+main {
+    margin-top: 7vh;
+    width: 100%;
+    height: 100%;
+}
+main > h3 {
+    margin-top: 50px;
+}
+.titulo {
+    margin-left: 20px;
+}
+.info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+.caratula video{
+    display: flex;
+    align-items: baseline;
+    margin-left: 10px;
+    width: 50vw;
+    height: calc(50vw / 1.7777778);
+    object-fit: cover;
+    object-position: center;
+}
+.sinopsis {
+    height: 50%;
+    width: 45vw;
+    margin-left: 20px;
+}
+.item {
+    width: 1fr;
+    height: calc(20vw / 1.46666667);
+    transition: all .2s ease-in;
+    position: relative;
+}
+.pie {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    background:rgba(0, 0, 0, 0.8);;
+    display: none;
+    z-index:10;
+}
+.pie input[type="button"] {
+    background-color: var(--button-video);
+    color: white;
+    border: 0;
+    padding: 10px;
+    font-size: .8rem;
+    border-radius: 5px;
+    
+}
+.item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
+.item:hover {
+    width: 1.5fr;
+    height: calc(30vw / 1.46666667);
+    object-fit: contain;
+}
+.item:hover .pie {
+    display: inherit;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    width: 100%;
+}
+@media all and (max-width: 480px){
+    .info {
+        flex-direction: column;
+        align-items: center;
+    }
+    .caratula video {
+        flex-basis: 100%;
+        margin-left: 0;
+        width: 100vw;
+        height: calc(100vw / 1.777778);
+    }
+    .sinopsis {
+        width: 90%;
+        margin: 20px;
+    }
+    .item {
+        width: 2fr;
+        height: calc(50vw / 1.46666667);
+        position: relative;
+    }
+    .item:hover {
+        width: 2fr;
+        height: calc(50vw / 1.46666667);
+        object-fit: contain;
+    }
+    .item:hover .pie {
+        display: none;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+        width: 100%;
+    }
+@media all and (max-width: 900px){
+    .info {
+        flex-direction: column;
+        align-items: center;
+    }
+    .caratula video {
+        flex-basis: 100%;
+        margin-left: 0;
+        width: 100vw;
+        height: calc(100vw / 1.777778);
+    }
+    .sinopsis {
+        width: 90%;
+        margin: 20px;
+    }
+
+}
